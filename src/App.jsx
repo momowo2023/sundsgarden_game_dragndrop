@@ -12,10 +12,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="login" element={<Login />} />
+          <Route path="*" element={<ErrorLogin />} />
           <Route path="/game/:userId" element={<GamePage />} />
           <Route path="/profile/:userId" element={<ProfilePage />} />
-          <Route path="*" element={<ErrorLogin />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
     </>
