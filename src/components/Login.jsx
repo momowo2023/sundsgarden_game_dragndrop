@@ -1,5 +1,5 @@
 import React, { useState} from "react"; // uses the useState hook to add a variable to update the value.
-
+import { ErrorLogin } from "./ErrorLogin";
 
 const Login = ( props ) => {
     const [username, setUsername] = useState("");
@@ -29,7 +29,7 @@ const Login = ( props ) => {
 
     return( 
         <> 
-            {error && <div style={{ color: "red" }}>{error}</div>}  
+            {error && <ErrorLogin message={error} />}
             <form onSubmit={(handleSubmit)}> 
             <label htmlFor="userName">UserName</label>
             <input value={username}  type="text" placeholder="UserName" id="userName" name="userName" onChange={(e) => setUsername(e.target.value)} /> 
