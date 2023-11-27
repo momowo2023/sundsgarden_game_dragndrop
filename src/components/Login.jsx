@@ -1,10 +1,12 @@
 import React, { useState} from "react"; // uses the useState hook to add a variable to update the value.
 import { ErrorLogin } from "./ErrorLogin";
+import { useNavigate } from "react-router-dom"; //to allow users to access different components
 
-const Login = ( props ) => {
+const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");  // to store and display any error messages
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {   
         event.preventDefault(); // prevent the default behavior of a form when it is submitted.
@@ -20,7 +22,8 @@ const Login = ( props ) => {
     };
     
     const successMessage = () => {
-        alert(`Hi ${username}` )
+        alert(`Hi ${username}` );
+        navigate(`/game/${username}`); //  access to the user's game page after login
     };
 
     const errorMessage = (message) => {
@@ -31,13 +34,13 @@ const Login = ( props ) => {
         <> 
             {error && <ErrorLogin message={error} />}
             <form onSubmit={(handleSubmit)}> 
-            <label htmlFor="userName">UserName</label>
-            <input value={username}  type="text" placeholder="UserName" id="userName" name="userName" onChange={(e) => setUsername(e.target.value)} /> 
-            <label htmlFor="password">password</label> 
-            <input value={password} type="password" placeholder="****" id="password" name="password" onChange={(e) => setPassword(e.target.value)} />
-            <button>Log In</button>
+                <label htmlFor="userName">UserName</label>
+                <input value={username}  type="text" placeholder="UserName" id="userName" name="userName" onChange={(e) => setUsername(e.target.value)} /> 
+                <label htmlFor="password">password</label> 
+                <input value={password} type="password" placeholder="****" id="password" name="password" onChange={(e) => setPassword(e.target.value)} />
+                <button>Log In</button>
             </form>
-            <button onClick={()=>props.onFormSwitch(`register`)}>Don't have an account? Register here.</button>
+            <button onClick={() => navigate("/register")}>Don't have an account? Register here.</button>
         </>
     ); //onChange is used to listen for user input in a text input box., onFormSwitch to switch to other page
 };
