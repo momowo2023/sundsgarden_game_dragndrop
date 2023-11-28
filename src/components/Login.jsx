@@ -1,6 +1,6 @@
 import React, { useState} from "react"; // uses the useState hook to add a variable to update the value.
-import { ErrorLogin } from "./ErrorLogin";
 import { useNavigate } from "react-router-dom"; //to allow users to access different components
+import  ErrorLogin  from "./ErrorLogin";
 
 const Login = () => {
     const [username, setUsername] = useState("");
@@ -11,7 +11,7 @@ const Login = () => {
     const handleSubmit = (event) => {   
         event.preventDefault(); // prevent the default behavior of a form when it is submitted.
     
-        const validUsername = "Eva"; //not sure if we do hardcore here
+        const validUsername = "Eva"; 
         const validPassword = "9432";
 
         if (username === validUsername && password === validPassword ){ //to ckeck if the username and password are match
