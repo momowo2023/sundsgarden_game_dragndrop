@@ -6,6 +6,10 @@ import { GamePage } from "./pages/GamePage";
 import { ProfilePage } from "./pages/ProfilePage";
 import Login from "./components/Login";
 
+// import RegisterAccount?? 
+// import { RegisterAccount } from "./components/RegisterAccount";
+
+
 function App() {
   return (
     <>
