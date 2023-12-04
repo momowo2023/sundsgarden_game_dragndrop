@@ -2,7 +2,9 @@ import { useState} from "react"; // uses the useState hook to add a variable to 
 import { useNavigate } from "react-router-dom"; //to allow users to access different components
 import  ErrorLogin  from "./ErrorLogin";
 import axios from "axios";
-import Card from "./Card";
+//import Card from "./Card";
+import './Login.css';
+
 
 
 const Login = () => {
@@ -62,14 +64,14 @@ const Login = () => {
     return( 
         <>
             {error && <ErrorLogin message={error} />}
-            <div className="container">
-                <Card>  
+            <div className="container"> 
+                <Card > 
                     <form className="form-container" >
                         <h1>Log in</h1>
                         <label>
                             <input 
                                 type="text" 
-                                placeholder="Email" 
+                                placeholder="eva@gmail.com" 
                                 value={email} 
                                 onChange={(e) => setEmail(e.target.value)} 
                             />
@@ -77,7 +79,7 @@ const Login = () => {
                         <label>
                             <input 
                                 type="password" 
-                                placeholder="Password" 
+                                placeholder="****" 
                                 value={password} 
                                 onChange={(e) => setPassword(e.target.value)} 
                             />
@@ -90,6 +92,5 @@ const Login = () => {
             </div>
         </>
     ); //onChange is used to listen for user input in a text input box., onFormSwitch to switch to other page
-};
-
+}; // Does our project require card functionality? We only have one user information that needs to be styled
 export default Login;
