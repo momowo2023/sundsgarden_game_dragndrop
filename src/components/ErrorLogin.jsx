@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import './Login.css';
+import "./Login.css";
 
 export const ErrorLogin = ({ message }) => {
   const navigate = useNavigate();
@@ -18,8 +18,8 @@ export const ErrorLogin = ({ message }) => {
       <p>
         <span style={{ color: "red" }}>{message}</span>
       </p>
-      <button className="btn" onClick={() => navigate("/login")}>Back to Login </button>
-      <button className="btn" onClick={() => navigate("/register")}>
+      <button onClick={() => navigate("/login")}>Back to Login </button>
+      <button onClick={() => navigate("/register")}>
         Create Account
       </button>
     </div>

@@ -2,6 +2,8 @@ import { useState} from "react"; // uses the useState hook to add a variable to 
 import { useNavigate } from "react-router-dom"; //to allow users to access different components
 import  ErrorLogin  from "./ErrorLogin";
 import axios from "axios";
+import "./Login.css";
+
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -60,13 +62,13 @@ const Login = () => {
     return( 
         <>
             {error && <ErrorLogin message={error} />}
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="Email">UserName</label>
+            <form className="form-container" onSubmit={handleSubmit}>
+                <label htmlFor="Email"></label>
                 <input value={email}  type="text" placeholder="Email" id="Email" name="Email" onChange={(e) => setEmail(e.target.value)} /> 
-                <label htmlFor="password">Password</label> 
+                <label htmlFor="password"></label> 
                 <input value={password} type="Password" placeholder="Password" id="Password" name="Password" onChange={(e) => setPassword(e.target.value)} />
             </form>
-            <div>
+            <div className="button-container">
             <button onClick={() => navigate("/gamePage")}>Sign in</button>
             <p>or</p>
             <button onClick={() => navigate("/RegisterAccountPage")}>Create Account</button>
