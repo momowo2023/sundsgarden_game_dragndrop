@@ -1,22 +1,15 @@
 import React from "react";
-import { Elementone } from "./Elements/Elementone";
-import { Elementtwo } from "./Elements/Elementtwo";
-import { Elementthree } from "./Elements/Elementthree";
-import { Elementfour } from "./Elements/Elementfour";
-import { Elementfive } from "./Elements/Elementfive";
-import { Elementsix } from "./Elements/Elementsix";
-import { Elementseven } from "./Elements/Elementseven";
+import { DropArea } from "../components/DropArea";
+import Register from "../components/RegisterAccount";
+import { Instructions } from "../components/Instructions";
+import { Elements } from "../components/Elements";
 
 
 export const GamePage = () => {
-  return <div>GamePage
-    <Elementone/>
-    <Elementtwo/>
-    <Elementthree/>
-    <Elementfour/>
-    <Elementfive/>
-    <Elementsix/>
-    <Elementseven/>
+  return <div>
+    <Elements/>
+    <Instructions/>
+    <DropArea/>
   </div>;
 };
 

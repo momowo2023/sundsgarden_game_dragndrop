@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"; //to allow users to access diffe
 import  ErrorLogin  from "./ErrorLogin";
 import axios from "axios";
 import "./Login.css";
+// import Card from "./Card";
 
 
 const Login = () => {
@@ -69,7 +70,7 @@ const Login = () => {
                 <input value={password} type="Password" placeholder="Password" id="Password" name="Password" onChange={(e) => setPassword(e.target.value)} />
             </form>
             <div className="button-container">
-            <button onClick={() => navigate("/gamePage")}>Sign in</button>
+            <button onClick={() => navigate("/GamePage")}>Sign in</button>
             <p>or</p>
             <button onClick={() => navigate("/RegisterAccountPage")}>Create Account</button>
             </div>
