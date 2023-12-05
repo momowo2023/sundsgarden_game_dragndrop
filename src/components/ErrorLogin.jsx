@@ -20,7 +20,7 @@ export const ErrorLogin = ({ message }) => {
       </p>
       <button className="btn" onClick={() => navigate("/login")}>Back to Login </button>
       <button className="btn" onClick={() => navigate("/register")}>
-        Don't have an account? Register here.
+        Create Account
       </button>
     </div>
   );
