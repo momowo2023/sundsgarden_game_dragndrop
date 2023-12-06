@@ -1,6 +1,6 @@
 import { useState} from "react"; // uses the useState hook to add a variable to update the value.
 import { useNavigate } from "react-router-dom"; //to allow users to access different components
-import  ErrorLogin  from "./ErrorLogin";
+//import  ErrorLogin  from "./ErrorLogin";
 import "./Login.css";
 import axios from "axios";
 // import Card from "./Card";
@@ -13,12 +13,18 @@ const Login = () => {
     const navigate = useNavigate();
 
     const checkUser = (users) => {  // Function to validate the user
-        const user = users.find(
-            (user) =>user.email === email && user.password === password);
-            console.log(user)
-            if (user.email === email && user.password === password)
-        return user;
+        const user = users.find((user) => user.email === email && user.password === password);
+        console.log(user);
+    
+        if (user && user.email === email && user.password === password) {
+            return user;
+        } else {
+            navigate("/Login");
+            return null; 
+        }
     };
+    
+    
 
     const handleSubmit = async (e) => {   
         e.preventDefault(); // prevent the default behavior of a form when it is submitted.
@@ -30,7 +36,7 @@ const Login = () => {
         }
 
         try {  //checking if the login credentials are valid
-            const response = await axios.get("/users");
+            const response = await axios.get("http://localhost:6001/users");
             const user = checkUser(response.data);
 
             if (user) {
@@ -39,7 +45,10 @@ const Login = () => {
                 console.error(error);
                 errorMessage("Invalid username or password. Please try again!");
             }
+        }catch(error){
+            console.log(error)
         }
+
     };
     
     const successMessage = (user) => {
@@ -53,13 +62,11 @@ const Login = () => {
     };
 
     const errorMessage = (message) => {
-        setError(message) //save error message
-
+        alert("Invalid username or password. Please try again!")
     };
 
     return( 
         <>
-            {error && <ErrorLogin message={error} />}
             <form className="form-container" onSubmit={handleSubmit}>
                 <h1>Log in</h1>
                 <label>
