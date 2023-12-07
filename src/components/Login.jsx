@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"; //to allow users to access diffe
 import "./Login.css";
 import axios from "axios";
 // import Card from "./Card";
+import routes from "../routes/routes";
 
 
 const Login = () => {
@@ -28,45 +29,53 @@ const Login = () => {
 
     const handleSubmit = async (e) => {   
         e.preventDefault(); // prevent the default behavior of a form when it is submitted.
-    
-  
-        if (email === "" || password === "" ){  // Ensure email and password are not empty. || equal or
-            alert("All fields are required!");
-            return;
-        }
 
         try {  //checking if the login credentials are valid
             const response = await axios.get("http://localhost:6001/users");
             const user = checkUser(response.data);
 
-            if (user) {
+            if (email === "" || password === "") {
+                alert("All fields are required!");
+                resetForm()
+                return;
+
+              } else if (user) {
                 successMessage(user);
-            } else {
+
+              } else {
                 console.error(error);
                 errorMessage("Invalid username or password. Please try again!");
-            }
-        }catch(error){
-            console.log(error)
-        }
 
+              }
+            } catch (error) {
+              console.log(error);
+            }
     };
     
+    const resetForm = () => {  // to do not repeat code
+        setEmail("");
+        setPassword("");
+    };
+        
     const successMessage = (user) => {
         alert(`Hi ${user.username}` );
         navigate(`/game/${user.id}`); //  access to the user's game page after login
         
         localStorage.setItem("user", JSON.stringify(user.id))
         
-        setEmail("");
-        setPassword("");
+        resetForm()
     };
 
     const errorMessage = (message) => {
         alert("Invalid username or password. Please try again!")
+        setError(message); //save error message
+
+        resetForm()
     };
 
     return( 
         <>
+            
             <form className="form-container" onSubmit={handleSubmit}>
                 <h1>Log in</h1>
                 <label>
@@ -89,7 +98,7 @@ const Login = () => {
             <div className="button-container">
                 <button onClick={(handleSubmit)}>Log in</button>
                 <p>or</p>
-                <button onClick={() => navigate("/RegisterAccountPage")}>Create Account</button>
+                <button onClick={() => navigate("/create-account")}>Create Account</button>
             </div>
         </>
     ); //onChange is used to listen for user input in a text input box., onFormSwitch to switch to other page

@@ -4,18 +4,15 @@ import GamePage from "../pages/GamePage";
 import { ProfilePage } from "../pages/ProfilePage";
 import { AboutPage } from "../pages/AboutPage";
 import Login from "../components/Login";
-import ErrorLogin from "../components/ErrorLogin";
 import Register from "../components/Register";
 
 const routes = (
   <Routes>
     <Route path="/" element={<HomePage />} />
-    <Route path="*" element={<ErrorLogin />} />
     <Route path="/game/:userId" element={<GamePage />} />
     <Route path="/profile/:userId" element={<ProfilePage />} />
     <Route path="/about" element={<AboutPage />} />
     <Route path="/login" element={<Login />} />
-    <Route path="/errorlogin" element={<ErrorLogin />} />
     <Route path="/create-account" element={<Register />} />
   </Routes>
 );
