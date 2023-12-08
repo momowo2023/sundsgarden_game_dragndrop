@@ -95,10 +95,10 @@ const Login = () => {
                     />
                 </label> 
             </form>
-            <div className="button-container">
-                <button onClick={(handleSubmit)}>Log in</button>
+            <div className="Login-button-container">
+                <button className="Login-button" onClick={(handleSubmit)}>Log in</button>
                 <p>or</p>
-                <button onClick={() => navigate("/create-account")}>Create Account</button>
+                <button className="Login-button" onClick={() => navigate("/create-account")}>Create Account</button>
             </div>
         </>
     ); //onChange is used to listen for user input in a text input box., onFormSwitch to switch to other page
