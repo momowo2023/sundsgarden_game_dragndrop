@@ -1,11 +1,14 @@
-.Login{
-    background-color:#EACFC4;
+
+.page-container{
+    max-width: 1440px;
+    background-color:#EACFC4; /*not even the  colour setting */
     display: flex;
     min-height: 100vh;
     align-items: center;
     justify-content: flex-end;
-}
-
+    background-image: url("../components/Images/LoginImage.png"); 
+} 
+/* How come I can't let image insert in this "LoginAccountPage? and other setting related to this page */
 .form-container{
     display: flex;
     flex-direction: column;
