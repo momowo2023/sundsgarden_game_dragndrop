@@ -1,5 +1,6 @@
 
 .page-container{
+    width: 100%;
     max-width: 1440px;
     background-color:#EACFC4; /*not even the  colour setting */
     display: flex;
@@ -15,9 +16,15 @@
     align-items: center;
 }
 
-.button-container{
+.Login-button-container{
     display: flex;
     flex-direction: row;
+    /*
+    justify-content: center;
+    max-width: 80px;
+    
+    How can I align a button container directly beneath a form? 
+    I've already tried using "justify-content: center" and "max-width:"*/
 }
 
 input {

@@ -1,5 +1,5 @@
 import Login from "../components/Login";
-import "./Login.css";
+import "../components/Login.css";
 import LoginImage from '../components/Images/LoginImage.png';
 
 
