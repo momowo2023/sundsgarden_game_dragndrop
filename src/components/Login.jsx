@@ -1,10 +1,7 @@
 import { useState} from "react"; // uses the useState hook to add a variable to update the value.
 import { useNavigate } from "react-router-dom"; //to allow users to access different components
-//import  ErrorLogin  from "./ErrorLogin";
 import "./Login.css";
 import axios from "axios";
-// import Card from "./Card";
-import routes from "../routes/routes";
 
 
 const Login = () => {
@@ -74,10 +71,8 @@ const Login = () => {
     };
 
     return( 
-        <>
-            
-            <form className="form-container" onSubmit={handleSubmit}>
-                <h1>Log in</h1>
+        <>  
+            <form className="form-container" onSubmit={handleSubmit}>               
                 <label>
                     <input 
                         value={email}  
@@ -97,7 +92,7 @@ const Login = () => {
             </form>
             <div className="Login-button-container">
                 <button className="Login-button" onClick={(handleSubmit)}>Log in</button>
-                <p>or</p>
+                <p className="Login-p">or</p>
                 <button className="Login-button" onClick={() => navigate("/create-account")}>Create Account</button>
             </div>
         </>

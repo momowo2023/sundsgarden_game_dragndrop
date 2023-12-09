@@ -13,10 +13,12 @@ export const LoginAccountPage = () => {
        
       </div>
       <div className="login-container">
-        <h1 className="login-title">IMAGINARIUM</h1>
-        <p className="login-para">A building game to spark your imagination. 
-Become the Architect of your own imaginary world.</p>
-        <Login />
+          <h1 className="login-title">IMAGINARIUM</h1>
+          <p className="login-para">A building game to spark your imagination.
+          <br></br> 
+          Become the Architect of your own imaginary world.
+          </p>
+          <Login />
       </div>
     </div>
   );
