@@ -1,15 +1,50 @@
 
 .page-container{
-    width: 100%;
-    max-width: 1440px;
-    background-color:#EACFC4; /*not even the  colour setting */
+    width: 80%;
+    width: 1440px;
+    background-color: rgba(228, 228, 231, 1);;
     display: flex;
     min-height: 100vh;
+}
+
+/*.login-container{
+    background-color:#8B8989;
+
+
+.image-container{
+    width: 500px;
+    width: 80%;
+    height: auto;
+    background-color: rgba(228, 228, 231, 1);;
+}}*/
+
+
+.loginImage{
+    margin-top: 30px;
+    height: 300px;
+    width:auto;
+    height: 80%;
+    background-color: rgba(228, 228, 231, 1);;
+}
+
+.login-container{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    background-image: url("../components/Images/LoginImage.png"); 
-} 
-/* How come I can't let image insert in this "LoginAccountPage? and other setting related to this page */
+    height: 300px;
+}
+
+.login-title{
+    color: #8B8989;
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    letter-spacing: 32%;
+    padding-left: 2rem;   
+}
+
+
+
 .form-container{
     display: flex;
     flex-direction: column;

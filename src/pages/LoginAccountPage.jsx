@@ -1,15 +1,21 @@
 import Login from "../components/Login";
 import "../components/Login.css";
-import LoginImage from '../components/Images/LoginImage.png';
+import { ImageLogin } from "../components/Elements/ImageLogin";
 
 
 export const LoginAccountPage = () => {
   return (
     <div className="page-container">
       <div className="image-container">
-        <img src={LoginImage} alt="Left Half Image"/>
+        <div className="loginImage">
+          <ImageLogin  />
+        </div>
+       
       </div>
       <div className="login-container">
+        <h1 className="login-title">IMAGINARIUM</h1>
+        <p className="login-para">A building game to spark your imagination. 
+Become the Architect of your own imaginary world.</p>
         <Login />
       </div>
     </div>
