@@ -64,6 +64,15 @@ input {
 
 .Login-button-container{
     min-width: 250px;
+}
+
+::placeholder {
+    color: black;
+    font-size: 14px;
+}
+
+.button-container{
+    min-width: 150px;
     margin-top: 20px;
     padding: 5px;
     display: flex;

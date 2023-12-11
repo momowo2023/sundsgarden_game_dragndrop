@@ -7,6 +7,14 @@ import "./Login.css";
 const ErrorLogin = ({ message }) => { //funcrion to handle the error login
   const navigate = useNavigate();
 
+  const backToLogin = () => {    //I doubt whether the code in lines 8 to 14 is necessary
+    navigate("/login");
+  };
+
+  const goToRegister = () => {
+    navigate("/register");
+  };
+
   return (   //to let users return to the login or register page.
     <div className="error-container" >
       <p>

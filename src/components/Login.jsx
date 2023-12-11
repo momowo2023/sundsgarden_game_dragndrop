@@ -1,14 +1,13 @@
-import { useState} from "react"; // uses the useState hook to add a variable to update the value.
+import { useState } from "react"; // uses the useState hook to add a variable to update the value.
 import { useNavigate } from "react-router-dom"; //to allow users to access different components
 import "./Login.css";
 import axios from "axios";
 
-
 const Login = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");  // to store and display any error messages
-    const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(""); // to store and display any error messages
+  const navigate = useNavigate();
 
     const checkUser = (users) => {  // Function to validate the user
         const user = users.find((user) => user.email === email && user.password === password);
@@ -97,5 +96,5 @@ const Login = () => {
             </div>
         </>
     ); //onChange is used to listen for user input in a text input box., onFormSwitch to switch to other page
-}; // Does our project require card functionality? We only have one user information that needs to be styled
+  }; // Does our project require card functionality? We only have one user information that needs to be styled
 export default Login;
