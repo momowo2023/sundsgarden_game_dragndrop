@@ -4,7 +4,7 @@ import GamePage from "./GamePage"
 export const HomePage = () => {
   return (
     <div>
-      Hello
+      <GamePage />
     </div>
   );
 };
