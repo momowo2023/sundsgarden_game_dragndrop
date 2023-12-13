@@ -48,7 +48,7 @@ const Login = () => {
             }
     };
     
-    const resetForm = () => {  // to do not repeat code
+    const resetForm = () => {  // to not repeat the code
         setEmail("");
         setPassword("");
     };
